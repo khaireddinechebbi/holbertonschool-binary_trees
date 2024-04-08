@@ -14,11 +14,12 @@ return (NULL);
 
 new_node->n = value;
 new_node->parent = parent;
-if (parent->left == NULL)
-parent->left = new_node;
-else
-parent->left->parent = new_node;
+
+if (parent->left != NULL)
+{
 new_node->left = parent->left;
+parent->left->parent = new_node;
+}
 parent->left = new_node;
 
 return (new_node);
