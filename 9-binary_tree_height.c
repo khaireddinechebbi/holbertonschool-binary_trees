@@ -8,11 +8,14 @@ size_t l = 0, r = 0;
 if (tree == NULL)
 return (0);
 
-l = binary_tree_height(tree->left);
-r = binary_tree_height(tree->right);
+if (tree->left != NULL)
+l = binary_tree_height(tree->left) + 1;
+
+if (tree-> right != NULL)
+r = binary_tree_height(tree->right) + 1;
 
 if (l > r)
-return (l + 1);
+return (l);
 else
-return (r + 1);
+return (r);
 }
