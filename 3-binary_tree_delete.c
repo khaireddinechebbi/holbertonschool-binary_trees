@@ -8,4 +8,5 @@ if (tree != NULL)
 tree->left = NULL;
 tree->right = NULL;
 }
+free(tree);
 }
