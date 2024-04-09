@@ -10,10 +10,10 @@ if (node == NULL || node->parent == NULL || node->parent->parent == NULL)
 return (NULL);
 
 if (node->parent->parent->left = node->parent)
-return (ode->parent->parent->right);
+return (node->parent->parent->right);
 
 if (node->parent->parent->right = node->parent)
-return (ode->parent->parent->left);
+return (node->parent->parent->left);
 
 return (NULL);
 }
