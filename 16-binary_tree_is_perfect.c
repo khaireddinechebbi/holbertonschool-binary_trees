@@ -78,5 +78,8 @@ return (0);
 if (binary_tree_balance(tree) != 0)
 return (0);
 
+if (binary_tree_height(tree->left) != binary_tree_height(tree->right))
+return (0);
+
 return (1);
 }
