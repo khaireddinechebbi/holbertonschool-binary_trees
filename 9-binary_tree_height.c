@@ -17,8 +17,5 @@ l = binary_tree_height(tree->left) + 1;
 if (tree->right != NULL)
 r = binary_tree_height(tree->right) + 1;
 
-if (l > r)
-return (l);
-else
-return (r);
+return (l > r ? l : r);
 }
