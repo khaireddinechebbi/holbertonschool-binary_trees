@@ -63,6 +63,23 @@ return (0);
 }
 
 /**
+* binary_tree_check_children - Checks if every node has exactly two children
+* @tree: Pointer to the root node of the tree to check
+* Return: 1 if every node has exactly two children, 0 otherwise
+*/
+int binary_tree_check_children(const binary_tree_t *tree)
+{
+if (tree == NULL)
+return (1);
+
+if ((tree->left == NULL && tree->right != NULL) || (tree->left != NULL && tree->right == NULL))
+return (0);
+
+return (binary_tree_check_children(tree->left) && binary_tree_check_children(tree->right));
+}
+
+
+/**
 * binary_tree_is_perfect - checks if a binary tree is perfect
 * @tree: pointer to the root node
 * Return: 1 if perfect, 0 otherwise
@@ -78,7 +95,7 @@ return (0);
 if (binary_tree_balance(tree) != 0)
 return (0);
 
-if (binary_tree_height(tree->left) != binary_tree_height(tree->right))
+if (binary_tree_check_children(tree) == 0)
 return (0);
 
 return (1);
