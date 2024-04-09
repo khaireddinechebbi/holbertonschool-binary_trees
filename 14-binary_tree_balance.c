@@ -31,7 +31,7 @@ size_t l, r;
 if (tree == NULL)
 return (0);
 
-l = binary_tree_height(tree->left);
-r = binary_tree_height(tree->right);
+l = binary_tree_height(tree->left) + 1;
+r = binary_tree_height(tree->right) + 1;
 return (l - r);
 }
