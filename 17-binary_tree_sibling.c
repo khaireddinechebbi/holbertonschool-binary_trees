@@ -15,5 +15,5 @@ return (node->parent->right);
 if (node->parent->right == node)
 return (node->parent->left);
 
-return (0);
+return (NULL);
 }
