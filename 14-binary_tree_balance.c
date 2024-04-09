@@ -36,8 +36,8 @@ l = 0;
 if (tree->right == NULL)
 r = 0;
 
-l = binary_tree_height(tree->left) + 1;
-r = binary_tree_height(tree->right) + 1;
+l = binary_tree_height(tree->left) - 1;
+r = binary_tree_height(tree->right) - 1;
 
 return (l - r);
 }
